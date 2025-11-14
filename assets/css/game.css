@@ -1,0 +1,6 @@
+/* game.css - simple Focus Bubbles game */
+.game-area{width:100%;height:360px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);position:relative;overflow:hidden}
+.bubble{position:absolute;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.5),0 0 18px rgba(255,255,255,0.03);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#04202a;font-weight:700}
+.score-pop{position:absolute;font-size:14px;color:#fff;pointer-events:none}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-24px)}100%{transform:translateY(0)}}
+*** End Patch

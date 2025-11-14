@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindScape — Mind Game</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="assets/css/game.css">
+</head>
+<body>
+  <main class="container center" style="min-height:80vh;flex-direction:column">
+    <nav class="site-nav"><a href="index.html">Back</a></nav>
+    <section class="card center" style="margin-top:28px;padding:22px;max-width:880px">
+      <h2>Focus Bubbles — click to calm</h2>
+      <p class="soft-text">Click the floating bubbles to collect points. Timer: <span id="timeLeft">30</span>s — Score: <span id="score">0</span> — High: <span id="highScore">0</span></p>
+      <div id="gameArea" class="game-area"></div>
+      <div style="margin-top:14px;display:flex;gap:10px"><button id="startGame" class="cta">Start</button><button id="resetHigh" class="cta" style="background:linear-gradient(90deg,#fff5ba,#ffd166);">Reset High</button></div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+</html>

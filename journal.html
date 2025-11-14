@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindScape — Journal Garden</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="assets/css/journal.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="site-nav"><a href="index.html">Back</a></nav>
+    <section class="card" style="margin-top:28px;">
+      <h2>Write your moment</h2>
+      <textarea id="entryText" placeholder="Write how you feel..." style="width:100%;min-height:120px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);"></textarea>
+      <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+        <select id="entryMood"><option value="joy">Joy</option><option value="calm">Calm</option><option value="neutral">Neutral</option><option value="sad">Sad</option><option value="anxiety">Anxiety</option></select>
+        <button id="saveEntry" class="cta">Save Entry</button>
+        <button id="exportJournal" class="cta" style="background:linear-gradient(90deg,#fff,#ddd);">Export</button>
+        <input type="file" id="importFile" accept="application/json" style="display:none" />
+        <button id="importBtn" class="cta">Import</button>
+      </div>
+    </section>
+    <section id="garden" class="card" style="margin-top:18px;min-height:360px;position:relative;overflow:hidden">
+      <h3>Your Garden</h3>
+      <div id="gardenArea" style="position:relative;height:280px"></div>
+      <div id="noEntries" class="soft-text">No entries yet — your garden awaits.</div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/journal.js"></script>
+</body>
+</html>

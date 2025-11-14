@@ -1,0 +1,7 @@
+/* relax.css - gradient shifts and quote animations */
+.relax-card{width:720px;max-width:92%;border-radius:16px;backdrop-filter:blur(8px)}
+.quote-box{font-size:22px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 40px rgba(0,0,0,0.5);transition:all .6s}
+.quote-box.fade-out{opacity:0;transform:translateY(10px)}
+
+@keyframes bgShift{0%{background:linear-gradient(120deg,#021026,#0b2238)}50%{background:linear-gradient(120deg,#04293a,#123456)}100%{background:linear-gradient(120deg,#021026,#0b2238)}}
+.relax-card{animation:bgShift 14s ease-in-out infinite}

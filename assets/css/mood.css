@@ -1,0 +1,24 @@
+/* mood.css - planet styles and animations */
+.planets-wrap{display:flex;gap:28px;align-items:center;justify-content:center}
+.planet{width:130px;height:130px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:#031018;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,0.6);transition:transform .36s, box-shadow .36s}
+.planet span{filter:drop-shadow(0 6px 12px rgba(0,0,0,0.4))}
+.planet.joy{background:radial-gradient(circle at 30% 30%,#fff9d6,#ffd166);box-shadow:var(--glow-joy)}
+.planet.calm{background:radial-gradient(circle at 30% 30%,#e9f7ff,#74c0fc);animation:breath 4s infinite;box-shadow:var(--glow-calm)}
+.planet.neutral{background:linear-gradient(135deg,#d7dcdf,#9aa0a6);animation:rotateSlow 12s linear infinite}
+.planet.sad{background:linear-gradient(180deg,#e8ddff,#b388ff);position:relative;overflow:hidden}
+.planet.anxiety{background:linear-gradient(180deg,#ff9b9b,#ff6b6b);animation:vibrate .08s infinite}
+
+.planet:hover{transform:scale(1.08)}
+@keyframes rotateSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes breath{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes vibrate{0%{transform:translateX(0)}25%{transform:translateX(1px)}50%{transform:translateX(-1px)}75%{transform:translateX(1px)}100%{transform:translateX(0)}}
+
+/* rain particles for sad */
+.planet.sad::after{content:'';position:absolute;left:30%;top:62%;width:6px;height:14px;background:rgba(255,255,255,0.22);border-radius:2px;box-shadow:0 20px 40px rgba(0,0,0,0.2);animation:rain 0.9s linear infinite}
+@keyframes rain{0%{transform:translateY(-6px);opacity:0.8}100%{transform:translateY(36px);opacity:0}}
+
+/* confirmation */
+#moodConfirm.card{max-width:520px;text-align:center}
+
+/* small screens */
+@media (max-width:720px){.planets-wrap{flex-wrap:wrap;gap:16px}.planet{width:98px;height:98px;font-size:26px}}

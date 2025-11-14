@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindScape — Mental Health Companion</title>
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="main-title">Welcome to MindScape...</h1>
+    <p class="subtitle">Interactive Mental Wellness Playground</p>
+  </header>
+
+  <!-- Full-screen intro (plays on page load) -->
+  <div id="introScreen">
+    <h1 id="introMain">Mental Health Companion</h1>
+    <h2 id="introSub">by Algorithm Avengers</h2>
+  </div>
+
+  <!-- Main content hidden initially until intro finishes -->
+  <div id="mainContent">
+  <main id="app">
+    <!-- Landing / Hero -->
+    <section id="landing" class="screen">
+      <div class="universe">
+          <div class="floating-shapes">
+            <span class="shape s1"></span>
+            <span class="shape s2"></span>
+            <span class="shape s3"></span>
+          </div>
+          <h1 class="hero-title">Explore your MindScape</h1>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+            <button id="btnMood" class="cta">Mood Galaxy</button>
+            <button id="btnJournal" class="cta">Journal Garden</button>
+            <button id="btnBreathe" class="cta">Breathe</button>
+            <button id="btnRelax" class="cta">Relax</button>
+            <button id="btnSafe" class="cta">SafeRoom</button>
+            <button id="btnDashboard" class="cta">Dashboard</button>
+            <button id="btnGame" class="cta">Mind Game</button>
+          </div>
+        </div>
+    </section>
+
+    <!-- Mood Galaxy -->
+    <section id="mood-galaxy" class="screen hidden">
+      <h2>How are you today?</h2>
+      <div class="planets" id="planets">
+        <div class="planet joy" data-mood="joy" title="Joy"></div>
+        <div class="planet calm" data-mood="calm" title="Calm"></div>
+        <div class="planet neutral" data-mood="neutral" title="Neutral"></div>
+        <div class="planet sad" data-mood="sad" title="Sad"></div>
+        <div class="planet anxiety" data-mood="anxiety" title="Anxiety"></div>
+      </div>
+      <div class="mood-help">Hover to spin, click to choose</div>
+    </section>
+
+    <!-- Emotion Garden (Journal) -->
+    <section id="garden" class="screen hidden">
+      <h2>Your Emotion Garden</h2>
+      <div class="journal">
+        <textarea id="journalInput" placeholder="Write how you feel..."></textarea>
+        <div class="journal-actions">
+          <select id="moodSelect">
+            <option value="joy">Joy</option>
+            <option value="calm">Calm</option>
+            <option value="neutral">Neutral</option>
+            <option value="sad">Sad</option>
+            <option value="anxiety">Anxiety</option>
+          </select>
+          <button id="saveJournal">Save Entry</button>
+        </div>
+      </div>
+      <div class="garden-canvas" id="gardenCanvas"></div>
+    </section>
+
+    <!-- Breathing Bubble -->
+    <section id="breathing" class="screen hidden">
+      <div class="breathing-wrapper">
+        <div class="breath-circle" id="breathCircle"></div>
+        <div class="breath-text" id="breathText">Inhale</div>
+      </div>
+    </section>
+
+    <!-- Relax Zone -->
+    <section id="relax" class="screen hidden">
+      <div class="relax-bg"></div>
+      <div class="glass-card">
+        <div class="quote" id="quoteText">Loading a soothing thought...</div>
+      </div>
+      <div class="clouds">
+        <span class="cloud c1"></span>
+        <span class="cloud c2"></span>
+      </div>
+    </section>
+
+    <!-- Crisis SafeRoom -->
+    <section id="crisis" class="screen hidden">
+      <div class="fog"></div>
+      <div class="safebox">
+        <h2 class="pulsing">You're safe here</h2>
+        <ol id="groundingSteps" class="grounding"></ol>
+        <button id="emergencyBtn" class="emergency">Call Emergency</button>
+      </div>
+    </section>
+
+    <!-- Mood Timeline Wave -->
+    <section id="timeline" class="screen hidden">
+      <h2>Your Mood Timeline</h2>
+      <canvas id="waveCanvas"></canvas>
+      <div id="timelineHint">Hover the wave to see mood points</div>
+    </section>
+
+    <!-- Full-screen Mind Journey animation -->
+    <div id="mindJourney" class="hidden">
+      <div class="mj-overlay"></div>
+      <div class="mj-content">
+        <div class="stars"></div>
+        <h2>A new step on your journey.</h2>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <a href="index.html" class="site-brand">MindScape</a>
+      <a href="mood.html">Mood Galaxy</a>
+      <a href="journal.html">Journal Garden</a>
+      <a href="breathe.html">Breathe</a>
+      <a href="relax.html">Relax</a>
+      <a href="crisis.html">SafeRoom</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="game.html">Game</a>
+    </nav>
+  </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

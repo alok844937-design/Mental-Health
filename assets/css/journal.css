@@ -1,0 +1,9 @@
+/* journal.css - garden and flower styles */
+#gardenArea{background:linear-gradient(180deg,rgba(0,0,0,0.06),rgba(0,0,0,0.02));border-radius:12px;padding:8px}
+.flower{position:absolute;bottom:8px;animation:sway 6s ease-in-out infinite;transform-origin:center bottom}
+@keyframes sway{0%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}100%{transform:translateY(0) rotate(-2deg)}}
+.firefly{position:absolute;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff8,rgba(255,255,200,0));filter:blur(3px)}
+.entry-card{position:absolute;left:8px;top:8px;background:rgba(255,255,255,0.02);padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+
+/* responsive */
+@media (max-width:720px){#gardenArea{height:220px}}

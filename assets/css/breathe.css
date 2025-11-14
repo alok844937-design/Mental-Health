@@ -1,0 +1,10 @@
+/* breathe.css - 3D breathing bubble */
+.breath-area{width:100%;display:flex;align-items:center;justify-content:center}
+.breath-card{width:480px;height:420px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.breath-circle{width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), rgba(116,192,252,0.06));box-shadow:0 20px 60px rgba(2,10,24,0.6),0 0 80px rgba(116,192,252,0.06);transform:scale(1);transition:transform 2.4s cubic-bezier(.4,0,.2,1)}
+.breath-text{font-size:28px;font-weight:700}
+
+/* background dimming handled in JS by toggling classes on body */
+.body-dimmed{filter:brightness(.92)}
+
+@media (max-width:720px){.breath-card{width:92%;height:auto;padding:20px}.breath-circle{width:200px;height:200px}}

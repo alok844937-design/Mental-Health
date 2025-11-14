@@ -1,0 +1,113 @@
+/* Global.css — MindScape base styles and animations
+   Design: gradients, neon glow, glassmorphism, smooth transitions, floating shapes, particles, breathing
+*/
+:root{
+  --bg-0:#061020; --bg-1:#081428; --bg-accent:#072338;
+  --glass: rgba(255,255,255,0.06);
+  --muted: rgba(255,255,255,0.6);
+  --joy: #ffd166; --calm:#74c0fc; --neutral:#9aa0a6; --sad:#b388ff; --anx:#ff6b6b;
+  --glow-joy: 0 0 28px rgba(255,209,102,0.22);
+  --glow-calm: 0 0 32px rgba(116,192,252,0.22);
+  --glass-border: rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(135deg,var(--bg-0),var(--bg-1));color:#eaf6ff;overflow:auto;-webkit-font-smoothing:antialiased}
+main{min-height:100vh}
+.container{width:1100px;max-width:92%;margin:0 auto;padding:48px 0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+/* reusable helpers */
+.center{display:flex;align-items:center;justify-content:center}
+.hidden{display:none}
+.soft-text{color:var(--muted)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--glass-border);backdrop-filter:blur(8px);border-radius:14px;padding:18px}
+
+/* Nav */
+.site-nav{position:fixed;left:18px;top:78px;display:flex;flex-direction:column;gap:10px;z-index:60}
+.site-nav a{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .18s ease, box-shadow .18s}
+.site-nav a:hover{transform:translateX(6px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.site-brand{font-weight:700;letter-spacing:0.6px}
+
+/* Landing (index.html) styles */
+.hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 10% 10%,rgba(116,192,252,0.06),transparent), linear-gradient(180deg,rgba(255,255,255,0.02),transparent);z-index:0}
+.floating-shapes{position:absolute;inset:0;pointer-events:none}
+.shape{position:absolute;border-radius:50%;filter:blur(26px);opacity:0.6;mix-blend-mode:screen}
+.shape.s1{width:360px;height:360px;background:#74c0fc;left:-6%;top:8%;animation:float 16s ease-in-out infinite}
+.shape.s2{width:220px;height:220px;background:#ffd166;right:6%;top:14%;animation:float 14s ease-in-out infinite}
+.shape.s3{width:140px;height:140px;background:#ff7ab6;left:40%;bottom:6%;animation:float 12s ease-in-out infinite}
+@keyframes float{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-32px) translateX(12px)}100%{transform:translateY(0) translateX(0)}}
+
+.hero-content{position:relative;z-index:2;text-align:center;padding:36px;border-radius:18px}
+.hero h1{font-size:52px;letter-spacing:1px;margin-bottom:8px;text-shadow:0 8px 40px rgba(2,10,24,0.6);}
+.hero p{max-width:680px;margin:12px auto 18px;color:rgba(234,246,255,0.8)}
+.cta{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:28px;border:none;background:linear-gradient(90deg,var(--calm),#7ef0a7);color:#05202a;font-weight:700;cursor:pointer;position:relative;overflow:hidden}
+.cta:focus{outline:2px solid rgba(255,255,255,0.06)}
+.cta::after{content:'';position:absolute;left:50%;top:50%;width:10px;height:10px;background:rgba(255,255,255,0.22);border-radius:50%;transform:translate(-50%,-50%) scale(0);transition:transform .6s ease}
+.cta:hover::after{transform:translate(-50%,-50%) scale(28);opacity:0}
+
+/* Typewriter effect */
+.typewriter{display:inline-block;white-space:nowrap;overflow:hidden;border-right:2px solid rgba(255,255,255,0.08);padding-right:10px}
+
+/* small hero subtitle neon */
+.subtitle{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 36px rgba(7,35,56,0.6);}
+
+/* Particles layer */
+.particles{position:absolute;inset:0;pointer-events:none;z-index:1}
+.particle{position:absolute;width:6px;height:6px;background:rgba(255,255,255,0.06);border-radius:50%;filter:blur(2px);animation:drift 12s linear infinite}
+@keyframes drift{0%{transform:translateY(0) translateX(0) scale(1);opacity:.8}50%{transform:translateY(-240px) translateX(40px) scale(.6);opacity:.3}100%{transform:translateY(0) translateX(0) scale(1);opacity:.8}}
+
+/* responsive */
+@media (max-width:820px){.hero h1{font-size:36px}.hero p{padding:0 18px}.site-nav{left:10px;top:10px}}
+
+/* ===================== Header (fixed) ===================== */
+.header{position:fixed;left:18px;top:14px;z-index:1200}
+.header .main-title{margin:0;font-size:15px;color:#ffffff;letter-spacing:0.6px;text-shadow:0 6px 28px rgba(116,192,252,0.18);font-weight:700}
+.header .subtitle{margin:2px 0 0;font-size:12px;color:rgba(255,255,255,0.92);opacity:0.95}
+.header{animation:headerFadeIn .5s ease both}
+@keyframes headerFadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* Ensure main content doesn't sit under header and site-nav */
+#mainContent{padding-top:110px;opacity:0;animation:mainFadeIn .6s ease forwards;animation-delay:4s}
+
+/* hero title style (different from header) */
+.hero-title{font-size:48px;letter-spacing:1px;margin-bottom:8px;text-shadow:0 0 12px rgba(255,255,255,0.06)}
+
+/* make header subtitle 'live' with a soft animated glow */
+.header .subtitle{animation:subtitleGlow 3s ease-in-out infinite}
+@keyframes subtitleGlow{
+  0%{text-shadow:0 2px 6px rgba(255,255,255,0.06);opacity:0.95}
+  50%{text-shadow:0 8px 28px rgba(116,192,252,0.28);opacity:1}
+  100%{text-shadow:0 2px 6px rgba(255,255,255,0.06);opacity:0.95}
+}
+
+/* avoid hero overlapping left nav by adding left padding on wide screens */
+.universe{padding-left:160px}
+@media (max-width:820px){.universe{padding-left:18px}.hero-title{font-size:36px}}
+
+/* ===================== Intro Screen ===================== */
+#introScreen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:1000;background:radial-gradient(circle at 50% 40%, rgba(0,0,0,0.65), rgba(2,6,12,0.95));color:#eaf6ff}
+#introScreen h1, #introScreen h2{margin:0;opacity:1}
+#introMain{font-size:40px;letter-spacing:0.8px;color:#ffffff;margin-bottom:8px;white-space:nowrap;overflow:hidden;border-right:2px solid rgba(255,255,255,0.08);display:inline-block}
+#introSub{font-size:18px;color:rgba(255,255,255,0.9);opacity:0;margin-top:6px}
+
+/* Typewriter effect: animate width using steps */
+#introMain{width:0;animation:typewriter 2s steps(28) forwards}
+@keyframes typewriter{from{width:0}to{width:28ch}}
+
+/* Subtitle fades in after typewriter */
+#introSub{animation:fadeIn 0.8s ease forwards;animation-delay:2.2s}
+
+/* Entire intro fades out after 3.5s */
+#introScreen{animation:introFadeOut 0.5s ease forwards;animation-delay:3.5s}
+@keyframes introFadeOut{0%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+
+/* Main content fade-in (triggered by animation-delay) */
+@keyframes mainFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* small accessibility: reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  #introMain,#introSub,#introScreen,#mainContent{animation:none!important;opacity:1}
+}

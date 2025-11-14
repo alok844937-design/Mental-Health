@@ -1,0 +1,40 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+
+# System files
+*.log
+
+# Local env
+.env
+
+# Mac
+*.DS_Store
+
+# Windows
+desktop.ini
+
+# Build artifacts
+dist/
+build/
+
+# Public keys
+*.pem
+
+# Ignore OneDrive temp files
+~$*

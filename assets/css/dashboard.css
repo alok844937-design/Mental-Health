@@ -1,0 +1,2 @@
+/* dashboard.css - wave canvas styling */
+#waveCanvas{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 40px rgba(0,0,0,0.5);border-radius:12px}
