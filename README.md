@@ -17,7 +17,7 @@ Data persistence
 
 Journal entries and last mood are stored in LocalStorage in your browser.
 
-Notes
+# Notes 
 
 - Animations are implemented with CSS + lightweight JS.
 - This scaffold is intended as a foundation — you can expand visuals, accessibility, and add backend sync later.
