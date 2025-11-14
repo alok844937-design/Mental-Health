@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MindScape — Animated Mental Health Companion
 
 This is a static demo that includes: an animated landing screen, an interactive Mood Galaxy, an Emotion Garden (journal→flowers), a Breathing Bubble, a Relax Zone, Crisis SafeRoom, and a Mood Timeline wave, plus a full-screen "Mind Journey" animation on save.
@@ -20,3 +21,6 @@ Notes
 
 - Animations are implemented with CSS + lightweight JS.
 - This scaffold is intended as a foundation — you can expand visuals, accessibility, and add backend sync later.
+=======
+# Mental-Health
+>>>>>>> 20689acdee9f23a21e8824523eff2fbb003afc51
